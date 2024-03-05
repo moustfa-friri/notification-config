@@ -1,0 +1,19 @@
+spring:
+  zipkin:
+    base-url: http://hexadb:9411/
+  cloud:
+    compatibility-verifier:
+      enabled: true
+  log:
+    level: info
+management:
+  zipkin:
+    tracing:
+      endpoint: http://hexadb:9411/api/v2/spans  
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  tracing:
+    sampling:
+      probability: 1.0
